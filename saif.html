@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAIF TEAM</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: white;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+            border: 2px solid #00ffff;
+            animation: glow 3s infinite alternate;
+        }
+        
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            }
+            to {
+                box-shadow: 0 0 40px rgba(0, 255, 255, 0.8), 0 0 60px rgba(0, 255, 255, 0.6);
+            }
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            animation: fadeIn 1.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            color: #00ffff;
+            text-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+            background: linear-gradient(45deg, #00ffff, #00bfff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #ffa500;
+        }
+        
+        .description {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            line-height: 1.6;
+            text-align: center;
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .service-item {
+            background: rgba(0, 50, 80, 0.4);
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 4px solid #00ffff;
+            transition: transform 0.3s ease, background 0.3s ease;
+            animation: slideIn 1s ease;
+        }
+        
+        .service-item:hover {
+            transform: translateY(-5px);
+            background: rgba(0, 100, 150, 0.4);
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .service-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #00ffaa;
+            display: flex;
+            align-items: center;
+        }
+        
+        .service-item h3 i {
+            margin-left: 10px;
+        }
+        
+        .service-item p {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        
+        .contact {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 80, 120, 0.4);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease;
+        }
+        
+        .contact h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #ffa500;
+        }
+        
+        .telegram {
+            display: inline-block;
+            background: linear-gradient(45deg, #0088cc, #00a8e8);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 168, 232, 0.4);
+        }
+        
+        .telegram:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 168, 232, 0.6);
+        }
+        
+        .telegram i {
+            margin-left: 8px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1rem;
+            color: #00bfff;
+            animation: fadeIn 2.5s ease;
+        }
+        
+        .emoji {
+            font-size: 1.5rem;
+            margin: 0 5px;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .guarantee {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .guarantee-item {
+            display: flex;
+            align-items: center;
+            background: rgba(0, 100, 150, 0.3);
+            padding: 10px 15px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+        }
+        
+        .guarantee-item i {
+            margin-left: 8px;
+            color: #00ffaa;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .services {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>SAIF TEAM <i class="fas fa-rocket"></i></h1>
+            <p class="subtitle">قائمة سريعة ومُخصصة لجميع احتياجاتك التقنية</p>
+            <p class="description">ارسل طلبك للإدمن ويتم الرد عليه فوريًا! <i class="emoji">⚡</i></p>
+        </div>
+        
+        <div class="services">
+            <div class="service-item">
+                <h3><i class="fas fa-th-large"></i> لوحة تحكم خاصة</h3>
+                <p>لوحة تحكم مخصصة حسب طلبك بسعر رخيص وجودة عالية</p>
+            </div>
+            
+            <div class="service-item">
+                <h3><i class="fas fa-robot"></i> سورس بوت صديق</h3>
+                <p>سورس بوت صديق متطور واحترافي لجميع احتياجاتك</p>
+            </div>
+            
+            <div class="service-item">
+                <h3><i class="fas fa-user"></i> بوت صديق في اللعبة</h3>
+                <p>بوت صديق بالايام في اللعبة متطور واحترافي  ميزت أسطورية </p>
+            </div>
+            
+            <div class="service-item">
+                <h3><i class="fas fa-users"></i> سورس بوت كلان</h3>
+                <p>سورس بوت كلان جماعي قوي ومتعدد الميزات</p>
+            </div>
+            
+            <div class="service-item">
+                <h3><i class="fas fa-code"></i> أي API تحتاجه</h3>
+                <p>نقدم لك أي API تحتاجه بتقنية عالية وأداء متميز</p>
+            </div>
+            
+            <div class="service-item">
+                <h3><i class="fab fa-telegram"></i> بانل تليجرام</h3>
+                <p>بانل تليجرام متكامل وسهل الاستخدام بميزات رائعة</p>
+            </div>
+            
+            <div class="service-item">
+                <h3><i class="fas fa-server"></i> استضافة مخصصة</h3>
+                <p>استضافة مخصصة سريعة وآمنة مع دعم فني متواصل</p>
+            </div>
+            
+            <div class="service-item">
+                <h3><i class="fas fa-gamepad"></i> إعدادات زيوت للألعاب</h3>
+                <p>إعدادات محترفة لألعابك المفضلة بدقة عالية</p>
+            </div>
+        </div>
+        
+        <div class="guarantee">
+            <div class="guarantee-item">
+                <i class="fas fa-bolt"></i>
+                <span>سرعة في التنفيذ</span>
+            </div>
+            <div class="guarantee-item">
+                <i class="fas fa-star"></i>
+                <span>جودة عالية</span>
+            </div>
+            <div class="guarantee-item">
+                <i class="fas fa-headset"></i>
+                <span>دعم فني متواصل</span>
+            </div>
+        </div>
+        
+        <div class="contact">
+            <h2>للطلب أو الاستفسار <i class="emoji">👨‍💻</i></h2>
+            <p>راسل الإدمن مباشرة على التليجرام</p>
+            <a href="https://t.me/saif_Officiel" class="telegram">
+                TELEGRAM <i class="fab fa-telegram-plane"></i>
+            </a>
+        </div>
+        
+        <div class="contact" style="
+           background:#0d1b2a;
+           padding:25px;
+           border-radius:20px;
+           text-align:center;
+           margin:20px 0;
+           border:2px solid #00e0ff;
+">
+            <h2 style="color:#ffb703; font-size:24px; margin-bottom:10px;">
+        للطلب أو الاستفسار 👨‍💻
+            </h2>
+
+            <p style="color:#ffffff; font-size:16px; margin-bottom:20px;">
+        راسل الإدمن مباشرة على الانستقرام
+    </p>
+
+           <a href="https://www.instagram.com/s1x_top?igsh=MW5sc3Z6OWFhZG1kcQ==" 
+              style="
+               display:inline-block;
+               background:#1d72e7;
+               color:white;
+               padding:12px 30px;
+               border-radius:30px;
+               font-size:18px;
+               text-decoration:none;
+               font-weight:bold;
+       ">
+        INSTAGRAM <i class="fab fa-instagram"></i>
+           </a>
+    </div>
+        
+        <div class="footer">
+            <p>شكرًا لثقتكم بفريق <span style="color: #00ffff;">S1X TEAM</span> <i class="emoji">💙</i></p>
+            <p>لا تتردد! تواصل الآن واحصل على خدمة متميزة تناسبك <i class="emoji">🎯</i></p>
+            </div>
+    </div>
+
+    <script>
+        // تأثيرات تفاعلية بسيطة
+        document.addEventListener('DOMContentLoaded', function() {
+            const serviceItems = document.querySelectorAll('.service-item');
+            
+            serviceItems.forEach((item, index) => {
+                // تأخير ظهور العناصر تدريجيًا
+                item.style.animationDelay = `${index * 0.2}s`;
+            });
+            
+            // تأثير عند التمرير
+            window.addEventListener('scroll', function() {
+                const scrolled = window.scrollY;
+                document.querySelector('.container').style.transform = `translateY(${scrolled * 0.1}px)`;
+            });
+        });
+    </script>
+</body>
+</html>
